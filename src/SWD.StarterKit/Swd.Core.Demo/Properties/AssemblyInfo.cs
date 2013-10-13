@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Swd.Core")]
+[assembly: AssemblyTitle("Swd.Core.Demo")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Swd.Core")]
+[assembly: AssemblyProduct("Swd.Core.Demo")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("abd28e62-d6ac-49b9-a99c-45bddba9b7c6")]
+[assembly: Guid("f6975799-3d48-42b3-9230-c6158a7b0949")]
 
 // Version information for an assembly consists of the following four values:
 //
