@@ -8,8 +8,8 @@
     <ProjectGuid>{C05CBE09-D707-4E42-886B-2778511D2BBF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SWD.Core</RootNamespace>
-    <AssemblyName>SWD.Core</AssemblyName>
+    <RootNamespace>Swd.Core</RootNamespace>
+    <AssemblyName>Swd.Core</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Castle.Core.3.2.1\lib\net40-client\Castle.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -49,13 +52,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\Config.cs" />
+    <Compile Include="Pages\CorePage.cs" />
+    <Compile Include="Pages\IInvokable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reporting\ISupportReporting.cs" />
+    <Compile Include="Reporting\ObjectProxy\ClassInterceptor.cs" />
+    <Compile Include="Reporting\ObjectProxy\ReportObjectProxy.cs" />
+    <Compile Include="Reporting\TestReport.cs" />
     <Compile Include="WebDriver\SwdBrowser.cs" />
     <Compile Include="WebDriver\WebDriverRunner.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />
-    <Folder Include="Pages\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\App.config">

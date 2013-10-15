@@ -60,10 +60,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Swd.Core.Demo\Swd.Core.Demo.csproj">
-      <Project>{9080F61F-5458-4926-95BD-E18D103C6455}</Project>
-      <Name>Swd.Core.Demo</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SWD.Core\Swd.Core.csproj">
       <Project>{C05CBE09-D707-4E42-886B-2778511D2BBF}</Project>
       <Name>Swd.Core</Name>

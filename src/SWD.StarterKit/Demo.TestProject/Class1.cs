@@ -6,8 +6,6 @@ using System.Text;
 using NUnit.Framework;
 using Swd.Core;
 using Swd.Core.WebDriver;
-using Swd.Core.Demo;
-
 
 
 namespace Demo.TestProject

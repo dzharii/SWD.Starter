@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Swd.Core;
+using Swd.Core.Pages;
 
 namespace Demo.TestModel
 {
-    public class Class1
+    public abstract class MyPage : CorePage, Invokable
     {
+
+        public abstract void Invoke();
     }
 }

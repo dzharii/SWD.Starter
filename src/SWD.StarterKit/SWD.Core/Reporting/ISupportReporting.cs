@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Swd.Core.Demo;
 
-namespace Swd.Core.Demo
+namespace Swd.Core.Reporting
 {
-    public class Class1
+    public interface ISupportReporting
     {
-
+        // Yes, it's empty
     }
 }
