@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using OpenQA.Selenium.Support;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System.Diagnostics;
 
 namespace Swd.Core.WebDriver
