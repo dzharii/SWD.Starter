@@ -1,4 +1,4 @@
-docs\api
+docs/api/*
 
 #OS junk files
 [Tt]humbs.db
