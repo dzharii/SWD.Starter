@@ -26,5 +26,28 @@ namespace Swd.Core.WebDriver
         {
             return Wait.UntilVisible(element, TimeSpan.FromMilliseconds(DefaultTimeOutMilliseconds));
         }
+
+        /// <summary>
+        /// Returns tag-specific element value
+        /// </summary>
+        public static string GetElementText(this IWebElement element)
+        {
+            string result = "";
+            string tag = element.TagName.ToLower();
+
+            switch (tag)
+            {
+                case "input":
+                    result = element.GetAttribute("value");
+                    break;
+                case "select":
+                    result = new SelectElement(element).SelectedOption.Text;
+                    break;
+                default:
+                    result = element.Text;
+                    break;
+            }
+            return result;
+        }
     }
 }
