@@ -1,3 +1,5 @@
+!packages/repositories.config
+
 docs/api/*
 
 #OS junk files
