@@ -1,0 +1,3 @@
+﻿Page Objects: 
+
+	1. Aggregation/Composition vs Inheritance
