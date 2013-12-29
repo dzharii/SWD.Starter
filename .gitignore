@@ -1,3 +1,9 @@
+bin/*
+!bin/readme.txt
+
+webdrivers/*
+!webdrivers/readme.txt
+
 !packages/repositories.config
 
 docs/api/*
