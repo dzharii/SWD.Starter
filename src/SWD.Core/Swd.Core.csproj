@@ -67,7 +67,6 @@
     <Compile Include="WebDriver\WebDriverRunner.cs" />
     <Compile Include="WebDriver\WebElementExtensions.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="..\App.config">
       <Link>App.config</Link>
@@ -77,6 +76,16 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\webdrivers\chromedriver.exe">
+      <Link>chromedriver.exe</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\webdrivers\IEDriverServer.exe">
+      <Link>IEDriverServer.exe</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

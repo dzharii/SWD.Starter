@@ -1,8 +1,8 @@
-bin/*
 !bin/readme.txt
+bin/*
 
-webdrivers/*
 !webdrivers/readme.txt
+webdrivers/*
 
 !packages/repositories.config
 
