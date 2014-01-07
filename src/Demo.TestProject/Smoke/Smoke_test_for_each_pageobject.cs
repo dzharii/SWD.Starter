@@ -30,5 +30,11 @@ namespace Demo.TestProject.Smoke
         {
             PageTest(MyPages.EmptyPage);
         }
+
+        [TestMethod]
+        public void CreateNewAccountPage_VerifyExpectedElements()
+        {
+            PageTest(MyPages.CreateNewAccountPage);
+        }
     }
 }

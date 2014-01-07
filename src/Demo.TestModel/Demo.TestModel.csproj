@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="MyPageBase.cs" />
     <Compile Include="MyPages.cs" />
+    <Compile Include="PageDeclarations\CreateNewAccountPage.cs" />
     <Compile Include="PageDeclarations\EmptyPage.cs" />
     <Compile Include="PageDeclarations\DummyExamplePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -62,6 +63,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\App.config">
+      <Link>App.config</Link>
+    </None>
+    <None Include="..\Config.config">
+      <Link>Config.config</Link>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

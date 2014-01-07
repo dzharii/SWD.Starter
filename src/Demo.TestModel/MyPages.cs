@@ -28,7 +28,7 @@ namespace Demo.TestModel
         // Put your new pages here: 
         //=======================================================================================
 
-
+        public static CreateNewAccountPage CreateNewAccountPage { get { return GetPage<CreateNewAccountPage>(); } }
 
     }
 }
