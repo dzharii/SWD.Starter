@@ -5,8 +5,8 @@ using System.Text;
 
 namespace Swd.Core.Pages
 {
-    public interface Invokable
+    public interface ICheckExpectedWebElements
     {
-        void Invoke();
+        void VerifyExpectedElementsAreDisplayed();
     }
 }

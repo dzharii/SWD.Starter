@@ -57,11 +57,22 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Smoke\Smoke_test_for_each_pageobject.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Demo.TestModel\Demo.TestModel.csproj">
+      <Project>{4fba00da-a9fb-4076-a8c7-8bd0f466289d}</Project>
+      <Name>Demo.TestModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SWD.Core\Swd.Core.csproj">
+      <Project>{c05cbe09-d707-4e42-886b-2778511d2bbf}</Project>
+      <Name>Swd.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

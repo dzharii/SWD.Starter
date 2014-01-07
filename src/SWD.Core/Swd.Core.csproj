@@ -55,8 +55,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\Config.cs" />
+    <Compile Include="Pages\SelfTestingCorePage.cs" />
     <Compile Include="Pages\CorePage.cs" />
-    <Compile Include="Pages\IInvokable.cs" />
+    <Compile Include="Pages\ICheckExpectedWebElements.cs" />
+    <Compile Include="Pages\Invokable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reporting\ISupportReporting.cs" />
     <Compile Include="Reporting\ObjectProxy\ClassInterceptor.cs" />
