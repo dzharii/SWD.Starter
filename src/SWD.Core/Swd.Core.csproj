@@ -64,6 +64,7 @@
     <Compile Include="Reporting\ObjectProxy\ClassInterceptor.cs" />
     <Compile Include="Reporting\ObjectProxy\ReportObjectProxy.cs" />
     <Compile Include="Reporting\TestReport.cs" />
+    <Compile Include="WebDriver\JavaScriptErrorOnThePageException.cs" />
     <Compile Include="WebDriver\SwdBrowser.cs" />
     <Compile Include="WebDriver\Wait.cs" />
     <Compile Include="WebDriver\WebDriverRunner.cs" />

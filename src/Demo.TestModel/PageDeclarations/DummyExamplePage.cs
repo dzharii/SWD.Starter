@@ -15,7 +15,7 @@ namespace Demo.TestModel.PageDeclarations
             throw new NotImplementedException();
         }
 
-        public override bool Exists()
+        public override bool IsDisplayed()
         {
             throw new NotImplementedException();
         }

@@ -52,7 +52,7 @@ namespace Demo.TestModel.PageDeclarations
 
         }
 
-        public override bool Exists()
+        public override bool IsDisplayed()
         {
             return txtCaptcha.Displayed;
         }

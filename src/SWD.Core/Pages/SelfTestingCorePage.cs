@@ -13,7 +13,7 @@ namespace Swd.Core.Pages
     {
         public abstract void Invoke();
 
-        public abstract bool Exists();
+        public abstract bool IsDisplayed();
 
         public abstract void VerifyExpectedElementsAreDisplayed();
     }

@@ -17,7 +17,7 @@ namespace Demo.TestModel.PageDeclarations
             // Empty
         }
 
-        public override bool Exists()
+        public override bool IsDisplayed()
         {
             return true;
         }

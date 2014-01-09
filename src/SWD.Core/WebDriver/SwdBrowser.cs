@@ -84,13 +84,48 @@ namespace Swd.Core.WebDriver
         }
 
 
-
         static readonly Finalizer finalizer = new Finalizer();
         sealed class Finalizer
         {
             ~Finalizer()
             {
                 CloseDriver();
+            }
+        }
+
+        public static object ExecuteScript(string jsCode)
+        {
+            return (Driver as IJavaScriptExecutor).ExecuteScript(jsCode);
+        }
+
+        public static void HandleJavaScriptErrors()
+        {
+            string jsCode =
+            #region JavaScript Error Handler code
+            @"
+                    if (typeof window.jsErrors === 'undefined') 
+                    {
+                        window.jsErrors = '';
+                        window.onerror = function (errorMessage, url, lineNumber) 
+                                         {
+                                              var message = 'Error: [' + errorMessage + '], url: [' + url + '], line: [' + lineNumber + ']';
+                                              message = message + ""\n"";
+                                              window.jsErrors += message;
+                                              return false;
+                                         };
+                    }
+
+                    var errors = window.jsErrors;
+                    window.jsErrors = '';
+                    return errors;";
+            #endregion
+
+            string errors = "";
+            errors = (string)ExecuteScript(jsCode);
+
+            if (!string.IsNullOrEmpty(errors))
+            {
+                throw new JavaScriptErrorOnThePageException(errors);
             }
         }
     }
