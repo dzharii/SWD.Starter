@@ -1,0 +1,97 @@
+
+    // ------------
+    // desktop styles reset
+    // ------------
+
+    .main { width:auto; margin:0; -webkit-perspective:none; -moz-perspective:none; }
+    .users-listing { margin:0; width:auto; max-height:none; overflow:visible; border-radius:0; }
+    .user-pane { width:auto; height:auto; position:static; top:auto; right:auto; }
+    .user-profile, .user-edit, .user-create { height:100%; }
+    .pane { border-radius:0; @include animation(none); }
+    [class*="face-"] { display:none; }
+    .btn-desktop { display:none; }
+    .btn-mobile { display:block !important; }
+    .icon-grip { display:block; }
+
+
+    // ------------
+    // now let's apply small screens styles
+    // ------------
+
+    // vars
+    $toolsHeight: 45px;
+
+    .main { overflow:hidden; }
+
+    .tools { 
+        @include box-sizing(border-box);
+        padding:10px 20px; 
+        width:100%; height:$toolsHeight; 
+        background-color:#222; border:4px solid black; border-top:none; 
+    }
+
+    .btn-mobile { display:inline-block; }
+
+    .main > .tools { 
+        position:fixed; top:0; z-index:1; 
+        .create-btn > span { color:white; left:50px; }
+        .users-count { color:white; top:15px; left:auto; right:20px; }
+    }
+    .users-listing { 
+        overflow:scroll; -webkit-overflow-scrolling:touch;
+        height:100%; padding-top:$toolsHeight;
+        li a { border-bottom:3px solid #292929; }
+    }
+
+    .user-pane { 
+        position:absolute; z-index:1; top:0; left:100%;
+        width:100%; height:100%; padding-top:$toolsHeight;
+
+        .tools {
+            position:absolute; top:0; left:0;
+            background-color:lighten($gray,5%);
+            border:none; border-bottom:4px solid $gray;
+
+            button { margin:-3px 0 0 10px; }
+        }
+    }
+    .user-profile {
+        padding-top:$toolsHeight+20;
+        
+        .date {
+            display:inline-block;
+            position:static; margin-top:25px;
+            font-size:12px; background:#f1f1f1; border-color:#ddd;
+        }
+    }
+    .user-edit { 
+        z-index:2; top:0; 
+        padding-top:$toolsHeight+20;
+    }
+    
+    .pane {
+        padding-left:45px; padding-right:45px;
+
+        // can transition if any transform property changes
+        -webkit-transition:-webkit-transform .4s ease;
+           -moz-transition:   -moz-transform .4s ease;
+            -ms-transition:    -ms-transform .4s ease;
+                transition:        transform .4s ease;
+
+        // default positionning is handled in the didInsertElement of the DraggableView.js
+    }
+
+    .mobile-drag-trigger {
+        position:absolute; top:0; left:0;
+        height:100%; width:20px;
+        background-color:#f8f8f8;
+        border-right:1px solid #e9e9e9;
+
+        .icon-grip {
+            position:absolute; top:50%; left:50%;
+            font-size:16px; width:16px; height:16px;
+            margin-left:-4px; //margin-top:-8px;
+        }
+    }
+
+    .confirm-box { top:21px; z-index:1; }

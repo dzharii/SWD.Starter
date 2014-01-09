@@ -1,0 +1,82 @@
+/* 
+ * A collection of css animations stored in class names 
+ * so you can easely addClass/removeClass them on any HTML elements 
+*/
+
+
+.flipin { @include animation(flipin 1s ease both); }
+@-webkit-keyframes flipin { 
+    from { -webkit-transform: rotateX(180deg); }
+    to   { -webkit-transform: rotateX(0deg); } 
+}
+@-moz-keyframes flipin { 
+    from { -moz-transform: rotateX(180deg); }
+    to   { -moz-transform: rotateX(0deg); } 
+}
+
+.scaleout { @include animation(scaleout .8s ease both); }
+@-webkit-keyframes scaleout { 
+    from { -webkit-transform: translateZ(0px) translateX(0px) scale(1); } 
+    50%  { -webkit-transform: translateZ(-10px) translateX(-170px) scale(.95); } 
+    to   { -webkit-transform: translateZ(-10px) translateX( -130px) scale(.95); } 
+}
+@-moz-keyframes scaleout { 
+    from { -moz-transform: translateZ(0px) translateX(0px) scale(1); } 
+    50%  { -moz-transform: translateZ(-10px) translateX(-170px) scale(.95); } 
+    to   { -moz-transform: translateZ(-10px) translateX( -130px) scale(.95); } 
+}
+
+.hidden { @include animation(hidden 1s ease both); }
+@-webkit-keyframes hidden { 
+    from { opacity:1; } 
+    to   { opacity:0; } 
+}
+@-moz-keyframes hidden { 
+    from { -moz-opacity:1; } 
+    to   { -moz-opacity:0; } 
+}
+
+.shown { @include animation(shown 1s ease both); }
+@-webkit-keyframes shown { 
+    from { opacity:0; -webkit-transform: translateZ(-10px) translateX(0px) scale(.95); } 
+    50%  { opacity:1; -webkit-transform: translateZ(0px) translateX(100px) scale(1); } 
+    to   { opacity:1; -webkit-transform: translateZ(0px) translateX(50px) scale(1); } 
+}
+@-moz-keyframes shown { 
+    from { -moz-opacity:0; -moz-transform: translateZ(-10px) translateX(0px) scale(.95); } 
+    50%  { -moz-opacity:1; -moz-transform: translateZ(0px) translateX(100px) scale(1); } 
+    to   { -moz-opacity:1; -moz-transform: translateZ(0px) translateX(0px) scale(1); } 
+}
+
+// fadein
+.fadein { @include animation(fadein .5s ease); }
+@-webkit-keyframes fadein { 
+    from { opacity:0; } 
+    to   { opacity:1; } 
+}
+@-moz-keyframes fadein { 
+    from { -moz-opacity:0; } 
+    to   { -moz-opacity:1; } 
+}
+
+// Daniel Eden's Hinge animation from https://github.com/daneden/animate.css
+.hinge, .delete-animation { -webkit-animation-name:hinge; -moz-animation-name:hinge; animation-name:hinge; }
+@-webkit-keyframes hinge { 0% { -webkit-transform:rotate(0); -webkit-transform-origin:top left; -webkit-animation-timing-function:ease-in-out; }
+    20%, 60% { -webkit-transform:rotate(80deg); -webkit-transform-origin:top left; -webkit-animation-timing-function:ease-in-out; }
+    40% { -webkit-transform:rotate(60deg); -webkit-transform-origin:top left; -webkit-animation-timing-function:ease-in-out; }
+    80% { -webkit-transform:rotate(60deg) translateY(0); opacity:1; -webkit-transform-origin:top left; -webkit-animation-timing-function:ease-in-out; }
+    100% { -webkit-transform:translateY(700px); opacity:0; }
+}
+@-moz-keyframes hinge { 0% { -moz-transform:rotate(0); -moz-transform-origin:top left; -moz-animation-timing-function:ease-in-out; }
+    20%, 60% { -moz-transform:rotate(80deg); -moz-transform-origin:top left; -moz-animation-timing-function:ease-in-out; }
+    40% { -moz-transform:rotate(60deg); -moz-transform-origin:top left; -moz-animation-timing-function:ease-in-out; }
+    80% { -moz-transform:rotate(60deg) translateY(0); opacity:1; -moz-transform-origin:top left; -moz-animation-timing-function:ease-in-out; }
+    100% { -moz-transform:translateY(700px); opacity:0; }
+}
+@keyframes hinge { 0% { transform:rotate(0); transform-origin:top left; animation-timing-function:ease-in-out; }
+    20%, 60% { transform:rotate(80deg); transform-origin:top left; animation-timing-function:ease-in-out; }
+    40% { transform:rotate(60deg); transform-origin:top left; animation-timing-function:ease-in-out; }
+    80% { transform:rotate(60deg) translateY(0); opacity:1; transform-origin:top left; animation-timing-function:ease-in-out; }
+    100% { transform:translateY(700px); opacity:0; }
+}
+
