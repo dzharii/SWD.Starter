@@ -7,6 +7,7 @@ Some tasks:
 - [ ] Document how to start scrumboard: cinst, python etc.
 - [ ] Add NUnit Sample
 - [ ] Add FluentAssertions samples
+- [ ] Configuration: add MyConfig for custom projects and DemoProject
 
 
 Other starter kits: 

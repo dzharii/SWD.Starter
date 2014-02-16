@@ -119,7 +119,7 @@ namespace Swd.Core.WebDriver
                     window.jsErrors = '';
                     return errors;";
             #endregion
-
+            
             string errors = "";
             errors = (string)ExecuteScript(jsCode);
 

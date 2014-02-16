@@ -1,0 +1,4 @@
+SWD Starter MainPage                         {#mainpage}
+============
+
+Documentation that will appear on the main page

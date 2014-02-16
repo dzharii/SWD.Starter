@@ -21,7 +21,6 @@ namespace Demo.TestProject.Smoke
         }
 
         
-        
         // Add testMethods for your new pages here:
         // *PageName*_VerifyExpectedElements()
         
