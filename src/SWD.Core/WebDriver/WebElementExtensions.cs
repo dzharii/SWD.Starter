@@ -71,5 +71,27 @@ namespace Swd.Core.WebDriver
             }
             return result;
         }
+
+        /// <summary>
+        /// Gets a value indicating whether or not this element is displayed.  
+        /// This method  suppresses any WebDriver exceptions  
+        /// </summary>
+        /// <param name="element"></param>
+        /// <returns></returns>
+        public static bool IsDisplayedSafe(this IWebElement element)
+        {
+            bool result = false;
+            try
+            {
+                result = element.Displayed;
+            }
+            catch (Exception e)
+            {
+
+                // Empty; Ignored
+            }
+            return result;
+
+        }
     }
 }

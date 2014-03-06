@@ -19,85 +19,65 @@ namespace Swd.Core.WebDriver
 
     public static class SwdBrowser
     {
-        public static event Action OnDriverStarted;
-        public static event Action OnDriverClosed;
-
-        public static Func<IWebDriver> _initializeDriver;
-        public static Func<IWebDriver> InitializeDriver
-        {
-            get { return _initializeDriver; }
-            set { _initializeDriver = value; }
-        }
-
+        
         private static IWebDriver _driver = null;
 
-        static SwdBrowser()
-        {
-            InitializeDriver = () =>
-                {
-                    _driver = WebDriverRunner.Run(Config.swdBrowserType, Config.wdIsRemote, Config.wdRemoteUrl);
-                    return _driver;
-                };
-        }
-
+        /// <summary>
+        /// Returns current WebDriver instance.    
+        /// 
+        /// * When the Driver was already created and the browser was opened – the 
+        ///   property returns a reference to current browser.  
+        /// * If the Driver was not initialized yet – it will create a new browser 
+        ///   (WebDriver) instance automatically, according to the configuration file.  
+        /// </summary>
         public static IWebDriver Driver
         {
             get
             {
-                if (_driver == null) Initialize();
+                if (_driver == null)
+                {
+                    _driver = WebDriverRunner.Run(Config.swdBrowserType, 
+                                                  Config.wdIsRemote, 
+                                                  Config.wdRemoteUrl);
+                }
                 return _driver;
             }
         }
 
-        public static void Initialize()
-        {
 
-            if (_driver != null)
-            {
-                _driver.Quit();
-                if (OnDriverClosed != null) OnDriverClosed();
-            }
-
-            _driver = InitializeDriver();
-
-            // Fire OnDriverStarted event
-            if (OnDriverStarted != null)
-            {
-                OnDriverStarted();
-            }
-        }
-
+        /// <summary>
+        /// Closes the current WebDriver instance (and a web-browser window)
+        /// </summary>
         public static void CloseDriver()
         {
-
             if (_driver != null)
             {
                 _driver.Dispose();
-
-                // Fire OnDriverClosed
-                if (OnDriverClosed != null)
-                {
-                    OnDriverClosed();
-
-                }
+                _driver = null;
             }
         }
 
-
-        static readonly Finalizer finalizer = new Finalizer();
-        sealed class Finalizer
-        {
-            ~Finalizer()
-            {
-                CloseDriver();
-            }
-        }
-
+        /// <summary>
+        /// Executes JavaScript in the context of the currently selected frame or window.
+        /// </summary>
+        /// <param name="jsCode">JavaScript code block</param>
+        /// <returns>The value returned by the script</returns>
         public static object ExecuteScript(string jsCode)
         {
             return (Driver as IJavaScriptExecutor).ExecuteScript(jsCode);
         }
 
+
+        /// <summary>
+        /// *Executes JavaScript code block inside opened Web-Browser*   
+        ///  
+        /// Collects JavaScript errors on the page and throws JavaScriptErrorOnThePageException 
+        /// in case unhandled JavaScript errors had occurred on the WebPage   
+        /// During the first call on the specific web page, this method injects a script 
+        /// for error collection into the web page. The next calls will check if there 
+        /// are errors collected.   
+        /// If any JavaScript errors are captured – the method will throw JavaScriptErrorOnThePageException
+        /// </summary>
         public static void HandleJavaScriptErrors()
         {
             string jsCode =
@@ -126,6 +106,18 @@ namespace Swd.Core.WebDriver
             if (!string.IsNullOrEmpty(errors))
             {
                 throw new JavaScriptErrorOnThePageException(errors);
+            }
+        }
+
+        /// <summary>
+        /// Driver Finalizer: automatically closes WebDriver when the test suite run in completed
+        /// </summary>
+        static readonly Finalizer finalizer = new Finalizer();
+        sealed class Finalizer
+        {
+            ~Finalizer()
+            {
+                CloseDriver();
             }
         }
     }

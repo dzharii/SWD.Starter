@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Demo.TestModel;
 using Swd.Core.Pages;
+using Swd.Core.WebDriver;
 
 namespace Demo.TestProject.Smoke
 {

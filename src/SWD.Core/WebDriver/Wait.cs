@@ -11,6 +11,7 @@ namespace Swd.Core.WebDriver
 {
     public static class Wait
     {
+        
         public static IWebElement UntilVisible(IWebElement element, TimeSpan timeOut)
         {
             Stopwatch sw = new Stopwatch();
@@ -18,7 +19,7 @@ namespace Swd.Core.WebDriver
 
             while (true)
             {
-                WebDriverException lastException = null;
+                Exception lastException = null;
                 try
                 {
                     if (element.Displayed)
@@ -27,9 +28,7 @@ namespace Swd.Core.WebDriver
                     }
                     System.Threading.Thread.Sleep(100);
                 }
-                catch (ElementNotVisibleException e)     { lastException = e; }
-                catch (NoSuchElementException e)         { lastException = e; }
-                catch (StaleElementReferenceException e) { lastException = e; }
+                catch (Exception e)     { lastException = e; }
 
                 if (sw.Elapsed > timeOut)
                 {
