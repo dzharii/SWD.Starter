@@ -13,6 +13,7 @@ using OpenQA.Selenium.PhantomJS;
 
 using Swd.Core.Configuration;
 
+using OpenQA.Selenium.Support.Extensions;
 
 namespace Swd.Core.WebDriver
 {
@@ -107,6 +108,11 @@ namespace Swd.Core.WebDriver
             {
                 throw new JavaScriptErrorOnThePageException(errors);
             }
+        }
+
+        public static Screenshot TakeScreenshot()
+        {
+            return Driver.TakeScreenshot();
         }
 
         /// <summary>
