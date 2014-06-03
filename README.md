@@ -5,9 +5,9 @@ SWD.Starter
 In order to download and start using the project you have to install:  
 
 * **[Git]( http://git-scm.com/)** 
-* [Visual Studio 2013 Express Desktop]( http://www.microsoft.com/en-US/download/details.aspx?id=40787) (if you don’t have a professional one) 
+* [Visual Studio 2013 Express Desktop]( http://www.microsoft.com/en-US/download/details.aspx?id=40787) (if you donвЂ™t have a professional one) 
 
-I personally recommend to use [Chocolatey]( https://chocolatey.org/) in order to perform such boring operations – automatically.
+I personally recommend to use [Chocolatey]( https://chocolatey.org/) in order to perform such boring operations вЂ“ automatically.
 
 ## :small_red_triangle_down: Download SWD Page Recorder
 
@@ -38,7 +38,7 @@ I personally recommend to use [Chocolatey]( https://chocolatey.org/) in order to
 
 ## Doxygen documentation generator
 
-Just don’t forget to run `SWD.Starter\doxygen_run.cmd` and enjoy your framework API documentation!  
+Just donвЂ™t forget to run `SWD.Starter\doxygen_run.cmd` and enjoy your framework API documentation!  
 
 See generated `SWD.Starter\docs\api\html\index.html`
 
@@ -46,14 +46,14 @@ See generated `SWD.Starter\docs\api\html\index.html`
 
 ## Core concepts: 
 
-1. Share the opened browser instance across different test cases – because that is how the most users do, e.g. they do not close the browser after each action.  
-1. If you really want parallel test execution, just run parallel processes… Multithreaded tests implementation inside a single process would add complexity to the code and kill your workstation performance.  
-1. Start using PageObjects – or your code will turn to real crap soon.   
-1. Are your 3000 UI tests took too much time? – You are doing something wrong when you want to test everything through UI. Consider 20 high level (UI) to 80 low level (HTTP Requests / Database / Unit) tests ratio.   
+1. Share the opened browser instance across different test cases вЂ“ because that is how the most users do, e.g. they do not close the browser after each action.  
+1. If you really want parallel test execution, just run parallel processesвЂ¦ Multithreaded tests implementation inside a single process would add complexity to the code and kill your workstation performance.  
+1. Start using PageObjects вЂ“ or your code will turn to real crap soon.   
+1. Are your 3000 UI tests took too much time? вЂ“ You are doing something wrong when you want to test everything through UI. Consider 20 high level (UI) to 80 low level (HTTP Requests / Database / Unit) tests ratio.   
 1. Decouple your code: avoid copy-paste approach as long as it is reasonable: 
-   * When the duplicated code in unique only for the given suite – create a separate method inside the suite
-   * When the duplicated code can be used globally across the project – move it to a special BusinessSteps class or to the specific page object class; 
-   * when you code just extends WebDriver functionality and has no connection to your test project logic – move it to the framework core assembly. 
+   * When the duplicated code in unique only for the given suite вЂ“ create a separate method inside the suite
+   * When the duplicated code can be used globally across the project вЂ“ move it to a special BusinessSteps class or to the specific page object class; 
+   * when you code just extends WebDriver functionality and has no connection to your test project logic вЂ“ move it to the framework core assembly. 
 
 1. When you work with PageObject, it is OK to create a lot of small methods with business logic oriented names. E.g., if you have the code, which opens a new project form: 
 ```
@@ -72,26 +72,26 @@ var newProjectForm = projectsPage.OpenNewProjectForm();
 ### :blue_book: Test Automation Framework methodology 
 
 
-:warning: read this only if you understand Russian... Otherwise... you will not understand anything. LOL: **[Заметки по архитектуре и методологии фреймворка](https://github.com/dzharii/SWD.Starter/blob/master/methodology_all_in_one_rus.md)**
+:warning: read this only if you understand Russian... Otherwise... you will not understand anything. LOL: **[Р—Р°РјРµС‚РєРё РїРѕ Р°СЂС…РёС‚РµРєС‚СѓСЂРµ Рё РјРµС‚РѕРґРѕР»РѕРіРёРё С„СЂРµР№РјРІРѕСЂРєР°](https://github.com/dzharii/SWD.Starter/blob/master/methodology_all_in_one_rus.md)**
 
 
 ### :anchor: External Articles in English:
 
-* [SWD Page Recorder – records WebElements and generates PageObject classes (Announcement)](https://groups.google.com/d/msg/selenium-users/epneoHaOymk/MjjhyoBcUf4J)
+* [SWD Page Recorder вЂ“ records WebElements and generates PageObject classes (Announcement)](https://groups.google.com/d/msg/selenium-users/epneoHaOymk/MjjhyoBcUf4J)
 * [PageObject Generator Utility for Selenium WebDriver](http://unmesh.me/2013/08/29/pageobject-generator-utility-for-selenium-webdriver/)
 
 ### :anchor: External Articles in Russian:
 
-* [Материалы моего доклада (SWD Page Recorder) на #SeleniumCamp 2014 и ещё несколько фактов]( http://blog.zhariy.com/2014/02/swd-page-recorder-seleniumcamp-2014.html)
-* [SWD Page Recorder: Записывает PageObject-классы для Selenium WebDriver]( http://habrahabr.ru/post/191802/)
-* [SWD.Starter: Быстрый старт автоматизации тестирования UI на C# + Selenium WebDriver + PageObjects]( http://habrahabr.ru/post/208822/)
+* [РњР°С‚РµСЂРёР°Р»С‹ РјРѕРµРіРѕ РґРѕРєР»Р°РґР° (SWD Page Recorder) РЅР° #SeleniumCamp 2014 Рё РµС‰С‘ РЅРµСЃРєРѕР»СЊРєРѕ С„Р°РєС‚РѕРІ]( http://blog.zhariy.com/2014/02/swd-page-recorder-seleniumcamp-2014.html)
+* [SWD Page Recorder: Р—Р°РїРёСЃС‹РІР°РµС‚ PageObject-РєР»Р°СЃСЃС‹ РґР»СЏ Selenium WebDriver]( http://habrahabr.ru/post/191802/)
+* [SWD.Starter: Р‘С‹СЃС‚СЂС‹Р№ СЃС‚Р°СЂС‚ Р°РІС‚РѕРјР°С‚РёР·Р°С†РёРё С‚РµСЃС‚РёСЂРѕРІР°РЅРёСЏ UI РЅР° C# + Selenium WebDriver + PageObjects]( http://habrahabr.ru/post/208822/)
 
 
 ### :video_camera: Videos
 
 * [(English)SWD Page Recorder: Working with Frames and JavaScript popups]( https://www.youtube.com/watch?v=C4jnX0PF_mc)
-* [(Rus) SWD Page Recorder BETA1 -- записывает PageObject'ы на C#, Java, Ruby, Perl, Python!]( https://www.youtube.com/watch?v=4Md_kC4Fdpg)
-* [За пределами PageObject](http://blog.zhariy.com/2013/02/atdays-pageobject.html)
+* [(Rus) SWD Page Recorder BETA1 -- Р·Р°РїРёСЃС‹РІР°РµС‚ PageObject'С‹ РЅР° C#, Java, Ruby, Perl, Python!]( https://www.youtube.com/watch?v=4Md_kC4Fdpg)
+* [Р—Р° РїСЂРµРґРµР»Р°РјРё PageObject](http://blog.zhariy.com/2013/02/atdays-pageobject.html)
 
 ### :octocat: Original Github open-source Projects
 
