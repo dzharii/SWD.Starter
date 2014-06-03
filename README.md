@@ -26,7 +26,6 @@ I personally recommend to use [Chocolatey]( https://chocolatey.org/) in order to
     	2.2 Build the project
 
     3. Record your PageObject with Page Recorder
-       https://upsa.epam.com/
       
     4. Generate code with template "[CSharp] SWD Starter PageObjects"
     5. Follow the instructions inside generated code
