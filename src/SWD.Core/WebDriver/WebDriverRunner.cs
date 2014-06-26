@@ -35,12 +35,10 @@ namespace Swd.Core.WebDriver
             if (isRemote)
             {
                 driver = ConnetctToRemoteWebDriver(browserName, remoteUrl);
-                isRemote = true;
             }
             else
             {
                 driver = StartEmbededWebDriver(browserName);
-                isRemote = false;
             }
             return driver;
         }
