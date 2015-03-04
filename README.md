@@ -5,7 +5,8 @@ SWD.Starter
 In order to download and start using the project you have to install:  
 
 * **[Git]( http://git-scm.com/)** 
-* [Visual Studio 2013 Express Desktop]( http://www.microsoft.com/en-US/download/details.aspx?id=40787) (if you don’t have a professional one) 
+* [Visual Studio Community 2013](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx) (RECOMENDED)
+* _ _ _ OR [Visual Studio 2013 Express Desktop]( http://www.microsoft.com/en-US/download/details.aspx?id=40787) (if you don’t have a professional one) 
 
 I personally recommend to use [Chocolatey]( https://chocolatey.org/) in order to perform such boring operations – automatically.
 
