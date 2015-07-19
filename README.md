@@ -91,6 +91,7 @@ var newProjectForm = projectsPage.OpenNewProjectForm();
 ### :video_camera: Videos
 
 * [(English)SWD Page Recorder: Working with Frames and JavaScript popups]( https://www.youtube.com/watch?v=C4jnX0PF_mc)
+* [(Rus) SWD Page Recorder – record your Page Objects fast like a ninja! (Dmytro Zharii)](https://www.youtube.com/watch?v=7B1RGt-MTuU)
 * [(Rus) SWD Page Recorder BETA1 -- записывает PageObject'ы на C#, Java, Ruby, Perl, Python!]( https://www.youtube.com/watch?v=4Md_kC4Fdpg)
 * [За пределами PageObject](http://blog.zhariy.com/2013/02/atdays-pageobject.html)
 
@@ -103,8 +104,6 @@ var newProjectForm = projectsPage.OpenNewProjectForm();
 
 * Blog (Rus): http://blog.zhariy.com/
 * LinkedIn: https://www.linkedin.com/in/dmytrozharii
-* Skype: dzhariy
-* :corn: Resume:  https://drive.google.com/file/d/0Bx--97zzjKNERnZfdjNMdlVMUG8/edit?usp=sharing
-* Personal Email: dzhariy !@[@]@! gmail.com
+* Personal Email: dmytro.zharii !@[@]@! gmail.com
 * :bird: Twitter: [@dzhariy](https://twitter.com/dzhariy)
 
